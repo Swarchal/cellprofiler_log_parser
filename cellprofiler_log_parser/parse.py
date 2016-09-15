@@ -1,5 +1,3 @@
-import pandas as pd
-
 def get_into_error(handle):
     """
     Read in log file and roughly parse into INFO and ERROR
