@@ -1,4 +1,9 @@
-def get_into_error(handle):
+"""
+Parsing functions for cellprofiler logs
+"""
+
+
+def get_info_error(handle):
     """
     Read in log file and roughly parse into INFO and ERROR
     """
@@ -6,8 +11,8 @@ def get_into_error(handle):
     pipeline_msg = "INFO:PipelineStatistics"
     info = []
     error = []
-    with open(handle) as f:
-        for line in f:
+    with open(handle) as log_file:
+        for line in log_file:
             if pipeline_msg in line:
                 if not line.startswith("\x1b"):
                     info.append(line)
